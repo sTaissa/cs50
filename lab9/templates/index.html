@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block script %}
+    {% if message %}
+        <script>
+            alert("{{ message }}");
+        </script>
+    {% endif %}
+{% endblock %}
+
+{% block form %}
+    <h2>Add a Birthday</h2>
+    <form action="/" method="post">
+        <input autocomplete="off" autofocus name="name" placeholder="Name" type="text" required>
+        <input autocomplete="off" autofocus name="month" placeholder="Month" type="number" required>
+        <input autocomplete="off" autofocus name="day" placeholder="Day" type="number" required>
+        <input type="submit" value="Add Birthday">
+    </form>
+{% endblock %}
+
+{% block db %}
+    <div class="section">
+        <h2>All Birthdays</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Birthday</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in birthdays %}
+                    <tr>
+                        <td>{{ row.name }}</td>
+                        <td>{{ row.month }}/{{ row.day }}</td>
+                        <td>
+                            <form action="/edit" method="get">
+                                <input name="id" type="hidden" value="{{ row.id }}">
+                                <button type="submit">Edit</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/blank">
+                                <input name="id" type="hidden" value="{{ row.id }}">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

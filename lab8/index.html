@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+             function p1(){
+            	let alts = document.querySelectorAll(".alt");
+
+            	for(let i=0; i<alts.length; i++) {
+            		alts[i].addEventListener("click", function() {
+            		    if (alts[i] == right){
+            		        this.style.backgroundColor = '#00af00c9';
+            			    divResult(0, 'green');
+            		    } else {
+            		        this.style.backgroundColor = '#ff0000c9';
+            			    divResult(0, 'red');
+            		    }
+            		});
+            	}
+            }
+
+            function divResult(div, color){
+                result = document.querySelectorAll(".result");
+
+                if (color == 'green'){
+                    result[div].innerHTML = 'Correct!';
+                    result[div].style.color = 'green';
+                } else{
+                    result[div].innerHTML = 'Incorrect';
+                    result[div].style.color = 'red';
+                }
+            }
+
+            function p2(){
+                let answer = document.querySelector("input").value;
+                let answerColor = document.querySelector("input");
+
+                if (answer == "36" || answer.toLowerCase() == "thirty-six"){
+                    divResult(1, 'green');
+                    answerColor.style.backgroundColor = '#00af00c9';
+                } else {
+                    divResult(1, 'red');
+                    answerColor.style.backgroundColor = '#ff0000c9';
+                }
+            }
+        </script>
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>What river runs through Paris?</h3>
+                <div class="result"></div>
+
+                <button class="alt" onclick="p1()">Tiber</button>
+                <button class="alt" onclick="p1()">Thames</button>
+                <button class="alt" id="right" onclick="p1()"> Seine</button>
+                <button class="alt" onclick="p1()"> Danube</button>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <h3>How many black keys are found on a traditional piano?</h3>
+                <div class="result"></div>
+
+                <input name="answer" type="text">
+                <button id="check" onclick="p2()">Check Answer</button>
+
+            </div>
+
+        </div>
+    </body>
+</html>

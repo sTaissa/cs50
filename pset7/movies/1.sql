@@ -1,0 +1,1 @@
+SELECT title AS "Titles in 2008" FROM movies WHERE year = 2008;

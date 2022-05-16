@@ -1,0 +1,139 @@
+body {
+    height: 100vh;
+    background-color: #212529;
+    color: black;
+    text-align: center;
+    box-shadow: inset 0 0 5rem rgb(0 0 0 / 50%);
+}
+
+/*nav*/
+nav {
+    margin-left:1rem;
+    justify-content: center!important;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+a {
+    padding: .5rem 1rem;
+    text-decoration: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+    font-weight: 700;
+    border-bottom: .25rem solid transparent;
+    color: rgba(255 251 251 / 45%);
+    border-bottom-color: rgba(255, 255, 255, .30);
+}
+.selected { /*corzinha na navegaçao*/
+    color: #6aeabb91;
+    border-bottom-color: #6aeabb91;
+}
+a:hover{ /*branco ao passar na nav*/
+     border-bottom-color: #fff;
+     text-decoration: none;
+     color: #fff;
+}
+
+section {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15vh;
+}
+
+#inicio { /*section index*/
+    align-items: center;
+}
+
+article {
+    background-color: #6aeabb91;
+    padding: 1vw;
+    border-radius: 8px;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.autor {/*autoria*/
+    text-align: right;
+}
+
+img {
+    height: 28vw;
+    border-radius: 8px;
+}
+
+
+h5, li {
+    margin-bottom: 2vw;
+}
+
+li, h6 {
+    text-align: left;
+}
+
+.idioma { /*imagem idioma*/
+    width: 17vh;
+    height: 5vh;
+}
+
+.li {
+    display: flex;
+    flex-wrap: wrap;
+    Justify-content: space-between;
+    margin-bottom: unset;
+}
+
+.contato {
+    width: 2vw;
+    height: 2vw;
+}
+
+#cont {
+    align-items: flex-start;
+}
+
+/*dark mode*/
+body[light]{
+    background-color: white;
+}
+a[light]:not(.selected){
+    color: rgb(80 80 80);
+    border-bottom-color: rgb(80 80 80);
+}
+.selected[light] {
+    color: #6aeabb;
+    border-bottom-color: #6aeabb;
+}
+.button{
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px 0;
+      display: inline-block;
+      color: #ccc;
+}
+
+/*mobile*/
+@media only screen and (max-width: 600px){
+    section {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 8vh;
+    }
+
+    article {
+        margin-bottom: 5vh;
+        margin-top: 5vh;
+        width: 80vw;
+    }
+
+    img {
+        height: 70vw;
+    }
+
+    body:not(#body) {
+        height: unset;
+    }
+}
+

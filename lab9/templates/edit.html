@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block form %}
+    <h2>Edit Birthday</h2>
+    <form action="/edit" method="post">
+        <input autocomplete="off" autofocus name="name" value='{{ name }}' type="text">
+        <input autocomplete="off" autofocus name="month" value="{{ month }}" type="text">
+        <input autocomplete="off" autofocus name="day" value="{{ day }}" type="text">
+        <input name="edit" type="submit" value="Edit">
+    </form>
+{% endblock %}

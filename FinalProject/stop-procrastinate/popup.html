@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+        <body>
+            <header>
+                <img src="images/stop_procrastinate.png" height="100vw">
+            </header>
+            <div id='div-default'>
+                <p id="p-actived"></p>
+                <p id='p-img'><img id="but-actived" height="70vw"></p>
+                <p id="p-sites"></p>
+                <button id="but-default" class="red">Sites</button>
+            </div>
+            <div id="div-add" style="display: none;">
+                <form id="form-add">
+                    <input type="text" name="site" placeholder="Site" autocomplete="off">
+                    <button type="submit" id="but-submit" class="gray">Submit</button>
+                </form>
+                <button id="but-back" class="red">Back</button>
+            </div>
+            <div id="div-sites" style="display: none;">
+                <table id="tab-sites">
+                </table>
+                <button id="but-add" class="gray">Add</button>
+                <button id="but-apply" class="red">Apply</button>
+            </div>
+        </body>
+        <script src="popup.js"></script>
+        <link rel="stylesheet" type="text/css" href="popup.css">
+</html>

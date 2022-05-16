@@ -1,0 +1,1 @@
+SELECT birth AS "Emma Stone birth" FROM people WHERE id = (SELECT id FROM people WHERE name = "Emma Stone");

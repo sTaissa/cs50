@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "version": "1.0",
+    "name": "Stop Procrastination",
+    "description": "Chrome extension - sTaissa",
+    "author": "Taissa Silva",
+    
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/icon16.png",
+            "24": "images/icon24.png",
+            "32": "images/icon32.png"
+        },
+        "default_title": "Stop Procrastination"
+    }, 
+    "permissions": [
+        "activeTab",
+        "tabs",
+        "scripting",
+        "storage"
+    ],
+    "host_permissions": [
+        "http://*/",
+        "https://*/"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    }
+}
